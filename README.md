@@ -1,3 +1,15 @@
+<h1 align="center">NewFag Launcher – Android</h1>
+
+**NewFag** Minecraft sunucusunun (`play.newfag.net`) Android launcher'ı. Telefonda Minecraft: Java Edition'ı Fabric ve modlarla açar.
+
+- İndir: [Releases](https://github.com/slmbenkahn/newfag-android/releases) ya da [Actions](https://github.com/slmbenkahn/newfag-android/actions) → son derleme → **NewFag-Android**
+- Site: https://newfag.net
+
+Bu proje, [Angel Aura Amethyst](https://github.com/AngelAuraMC/Amethyst-Android) (PojavLauncher'ın devamı) üzerine kuruludur ve aynı **LGPL-3.0** lisansıyla yayınlanır.
+Amethyst, PojavLauncher ve Boardwalk geliştiricilerine teşekkürler. Aşağıdaki orijinal açıklama ve lisans bilgileri korunmuştur.
+
+---
+
 <h1 align="center">Angel Aura Amethyst</h1>
 
 <img src="https://github.com/AngelAuraMC/Amethyst-Android/blob/v3_openjdk/app_pojavlauncher/src/main/assets/amethyst.png" align="left" width="130" height="130" alt="Amethyst logo">
