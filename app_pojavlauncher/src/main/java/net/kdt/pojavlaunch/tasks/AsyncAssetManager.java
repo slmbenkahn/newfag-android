@@ -124,7 +124,10 @@ public class AsyncAssetManager {
             String pathToLwjglNatives = String.format("lwjgl-%s-natives/", lwjglVer) + sArch;
 
             boolean shouldUpdate = true;
-            if (versionFile.exists()) {
+            // NewFag: surum dosyasi ortak klasorde durur, kutuphaneler ise uygulamanin ozel klasorunde.
+            // Uygulama yeniden kurulunca ozel klasor silinir; o durumda surum ayni olsa da yeniden cikar.
+            boolean nativeVar = new File(rootDir + "/" + pathToLwjglNatives + "/liblwjgl.so").isFile();
+            if (versionFile.exists() && nativeVar) {
                 FileInputStream fis = new FileInputStream(versionFile);
                 String release1 = Tools.read(is);
                 String release2 = Tools.read(fis);
