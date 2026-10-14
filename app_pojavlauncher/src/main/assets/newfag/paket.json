@@ -1,6 +1,6 @@
 {
-  "_aciklama": "NewFag Android hazir paketi. Masaustu paketler.json (meteor 1.21.4) + TouchController. Degisince surum artir.",
-  "surum": 1,
+  "_aciklama": "NewFag Android hazir paketi. Masaustu paketler.json (meteor 1.21.4). TouchController Meteor ile cakistigi icin cikarildi (surum 2). Degisince surum artir.",
+  "surum": 2,
   "mc": "1.21.4",
   "fabric": "0.19.5",
   "sunucu": "play.newfag.net",
@@ -83,13 +83,6 @@
       "url": "https://cdn.modrinth.com/data/YBz7DOs8/versions/5UXtojrL/nuit-fabric-1.0.0-beta.1%2Bmc1.21.4.jar",
       "hash": "sha512:6731767b6d48cb60d8a3c4f72b87d698a9dfb9af02f63164b0abc3c38f4d3e612a206fffa1adbbacaae8e0d8278a7d18c2fa27469d0a8e7f70ce817988be4d47",
       "boyut": 143855
-    },
-    {
-      "ad": "TouchController 0.2.1-beta15+fabric-1.21.4",
-      "dosya": "TouchController-0.2.1-beta15+fabric-1.21.4.jar",
-      "url": "https://cdn.modrinth.com/data/U7KwGAnT/versions/oQ65GyxQ/TouchController-0.2.1-beta15%2Bfabric-1.21.4.jar",
-      "hash": "sha512:35893816177cc5b977bf7c26ec758f5b30d099671d388a3603f3524ff9b003a3dcade6b5485f3cb6e1a78cf565b04b83d40ca1b2bbeb3c4519a635a3b3a50f51",
-      "boyut": 9517382
     }
   ]
 }
