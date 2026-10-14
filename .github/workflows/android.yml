@@ -8,7 +8,11 @@ on:
   push:
     branches-ignore:
       - 'l10n_v3_openjdk'
+    tags: ['v*']
   workflow_dispatch:
+
+permissions:
+  contents: write   # v* etiketlerinde GitHub Release olusturmak icin
 
 jobs:
   build:
@@ -122,3 +126,25 @@ jobs:
         with:
           name: NewFag-Android
           path: out/app-release.*
+
+      # v* etiketi gonderilince APK sabit adla yayinlanir:
+      # https://github.com/slmbenkahn/newfag-android/releases/latest/download/NewFag-Android.apk
+      - name: Release icin APK hazirla
+        if: startsWith(github.ref, 'refs/tags/v')
+        run: cp out/app-release.apk out/NewFag-Android.apk
+
+      - name: GitHub Release
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v2
+        with:
+          name: NewFag Android ${{ github.ref_name }}
+          files: out/NewFag-Android.apk
+          make_latest: true
+          body: |
+            **NewFag Launcher – Android** (Minecraft Java Edition, Fabric + NewFag paketi)
+
+            İndir: **NewFag-Android.apk** (aşağıda). Kurarken "bilinmeyen kaynaklara izin ver" demen gerekir.
+            İlk açılışta NewFag profili ve modlar otomatik kurulur; Oyna'ya basınca doğrudan play.newfag.net'e bağlanır.
+
+            Amethyst (PojavLauncher) tabanlıdır, LGPL-3.0.
+
