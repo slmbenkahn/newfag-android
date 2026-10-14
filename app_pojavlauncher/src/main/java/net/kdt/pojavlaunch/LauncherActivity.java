@@ -347,6 +347,9 @@ public class LauncherActivity extends BaseActivity {
         mProgressLayout.observe(ProgressLayout.INSTALL_MODPACK);
         mProgressLayout.observe(ProgressLayout.AUTHENTICATE_MICROSOFT);
         mProgressLayout.observe(ProgressLayout.DOWNLOAD_VERSION_LIST);
+
+        // NewFag: hazir profil ve modpack (ilk acilista / paket guncellenince)
+        net.kdt.pojavlaunch.newfag.NewFagPaket.gerekirseKur(this);
     }
 
     @Override

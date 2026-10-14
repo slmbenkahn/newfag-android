@@ -1,0 +1,95 @@
+{
+  "_aciklama": "NewFag Android hazir paketi. Masaustu paketler.json (meteor 1.21.4) + TouchController. Degisince surum artir.",
+  "surum": 1,
+  "mc": "1.21.4",
+  "fabric": "0.19.5",
+  "sunucu": "play.newfag.net",
+  "profil": "NewFag",
+  "klasor": "custom_instances/newfag",
+  "mods": [
+    {
+      "ad": "Meteor Client",
+      "dosya": "meteor-client-1.21.4-20250408.145004-42.jar",
+      "url": "https://maven.meteordev.org/snapshots/meteordevelopment/meteor-client/1.21.4-SNAPSHOT/meteor-client-1.21.4-20250408.145004-42.jar",
+      "hash": "sha256:fe166e4ccc27de18c6537acc72851f432b1a4850858f1e8cac4c80240a72b4ef",
+      "boyut": 4592462
+    },
+    {
+      "ad": "Baritone 1.13.1",
+      "dosya": "baritone-api-fabric-1.13.1.jar",
+      "url": "https://github.com/cabaletta/baritone/releases/download/v1.13.1/baritone-api-fabric-1.13.1.jar",
+      "hash": "sha256:bfb79c3cdb8fe1f7697999b1f9c7f08ea29775f3b69d48ad90c387690ee67b05",
+      "boyut": 1576185
+    },
+    {
+      "ad": "Fabric API 0.119.4+1.21.4",
+      "dosya": "fabric-api-0.119.4+1.21.4.jar",
+      "url": "https://cdn.modrinth.com/data/P7dR8mSH/versions/p96k10UR/fabric-api-0.119.4%2B1.21.4.jar",
+      "hash": "sha512:16b679f6a42549ca3b6bc147de710b2c8ba2d5e4661ed88df22782c05a4a5f6c1163d7b13867687ed91acde0fdfe5a5037d05662431c946865b58396284e7ee7",
+      "boyut": 2149128
+    },
+    {
+      "ad": "AppleSkin 3.0.6+mc1.21.3",
+      "dosya": "appleskin-fabric-mc1.21.3-3.0.6.jar",
+      "url": "https://cdn.modrinth.com/data/EsAfCjCV/versions/cHQjeYVS/appleskin-fabric-mc1.21.3-3.0.6.jar",
+      "hash": "sha512:b572a3eea43e0084819c88dd7fac6a0a5d5555d9b73df927b97f29764f281cadbfc8cc5f8f6b6920f1677bcec87b411e5a582d305a191735ad8d60fc90900900",
+      "boyut": 1095505
+    },
+    {
+      "ad": "Entity Culling 1.11.3",
+      "dosya": "entityculling-fabric-1.11.3-mc1.21.4.jar",
+      "url": "https://cdn.modrinth.com/data/NNAgCjsB/versions/U6ZIDmEu/entityculling-fabric-1.11.3-mc1.21.4.jar",
+      "hash": "sha512:fa1af799df65e9d4a647c21429227e1718f02fd0bfadfac3d50520fb5b9f3d999f3a7c26623f0a1c20c6a6f9963aa8dee15426e9e0d48aedf312f2e3851e0dc8",
+      "boyut": 1521548
+    },
+    {
+      "ad": "FastQuit 3.0.0+1.21.4",
+      "dosya": "fastquit-3.0.0+1.21.4.jar",
+      "url": "https://cdn.modrinth.com/data/x1hIzbuY/versions/HdbAWjaF/fastquit-3.0.0%2B1.21.4.jar",
+      "hash": "sha512:b2f0fe92e1c3ea6424a1b02271b63e66e37481be4e39cef170ff1ea690a78b25b1f5b25da14733018ed23c229e2832de5752a2257041306b2c72af34406e3ea5",
+      "boyut": 59241
+    },
+    {
+      "ad": "Krypton 0.2.8",
+      "dosya": "krypton-0.2.8.jar",
+      "url": "https://cdn.modrinth.com/data/fQEb0iXm/versions/Acz3ttTp/krypton-0.2.8.jar",
+      "hash": "sha512:5f8cf96c79bfd4d893f1d70da582e62026bed36af49a7fa7b1e00fb6efb28d9ad6a1eec147020496b4fe38693d33fe6bfcd1eebbd93475612ee44290c2483784",
+      "boyut": 161045
+    },
+    {
+      "ad": "Lithium mc1.21.4-0.15.3-fabric",
+      "dosya": "lithium-fabric-0.15.3+mc1.21.4.jar",
+      "url": "https://cdn.modrinth.com/data/gvQqBUqZ/versions/u8pHPXJl/lithium-fabric-0.15.3%2Bmc1.21.4.jar",
+      "hash": "sha512:b8b541c0e968571c8972872b342e34b92573bc9210d455dc1349589f30a67a90d930dbfd99b176ab9b110350ceb53e11118378dc13a35e83a9090826627bdac0",
+      "boyut": 797555
+    },
+    {
+      "ad": "Sodium mc1.21.4-0.6.13-fabric",
+      "dosya": "sodium-fabric-0.6.13+mc1.21.4.jar",
+      "url": "https://cdn.modrinth.com/data/AANobbMI/versions/c3YkZvne/sodium-fabric-0.6.13%2Bmc1.21.4.jar",
+      "hash": "sha512:2c72ca2ddfd27e29ff6c24fccdf6f3d80857bd1014c707017f96cb4a424f94918e53ba21d85f22e3c9171803f8d2c12c99ae857d38d8e85546cc65960b95a2f1",
+      "boyut": 1306799
+    },
+    {
+      "ad": "Xaero's Minimap fabric-1.21.4-26.5.0",
+      "dosya": "xaerominimap-fabric-1.21.4-26.5.0.jar",
+      "url": "https://cdn.modrinth.com/data/1bokaNcj/versions/XsKw9RY8/xaerominimap-fabric-1.21.4-26.5.0.jar",
+      "hash": "sha512:32cb9db0ef4aac6f633a5560dcc0a5ae6d0f4c17e3db3ed9cc485658c16499226e23ef99f02ffd003e18d40c7aaa080803eb476d77ba66e6f6cc82a46f999dfa",
+      "boyut": 2221992
+    },
+    {
+      "ad": "Nuit mc1.21.4-1.0.0-beta.1+fabric",
+      "dosya": "nuit-fabric-1.0.0-beta.1+mc1.21.4.jar",
+      "url": "https://cdn.modrinth.com/data/YBz7DOs8/versions/5UXtojrL/nuit-fabric-1.0.0-beta.1%2Bmc1.21.4.jar",
+      "hash": "sha512:6731767b6d48cb60d8a3c4f72b87d698a9dfb9af02f63164b0abc3c38f4d3e612a206fffa1adbbacaae8e0d8278a7d18c2fa27469d0a8e7f70ce817988be4d47",
+      "boyut": 143855
+    },
+    {
+      "ad": "TouchController 0.2.1-beta15+fabric-1.21.4",
+      "dosya": "TouchController-0.2.1-beta15+fabric-1.21.4.jar",
+      "url": "https://cdn.modrinth.com/data/U7KwGAnT/versions/oQ65GyxQ/TouchController-0.2.1-beta15%2Bfabric-1.21.4.jar",
+      "hash": "sha512:35893816177cc5b977bf7c26ec758f5b30d099671d388a3603f3524ff9b003a3dcade6b5485f3cb6e1a78cf565b04b83d40ca1b2bbeb3c4519a635a3b3a50f51",
+      "boyut": 9517382
+    }
+  ]
+}

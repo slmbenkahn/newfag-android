@@ -541,6 +541,10 @@ public final class Tools {
         if (hasSodiumMod) javaArgList.add("-Dsodium.checks.issue2561=false");
         javaArgList.add(versionInfo.mainClass);
         javaArgList.addAll(Arrays.asList(launchArgs));
+        // NewFag: profilin oyun argumanlari (ornek: dogrudan sunucuya baglan)
+        if (Tools.isValidString(minecraftProfile.gameArgs)) {
+            for (String arg : minecraftProfile.gameArgs.trim().split("\\s+")) if (!arg.isEmpty()) javaArgList.add(arg);
+        }
         // ctx.appendlnToLog("full args: "+javaArgList.toString());
         String args = LauncherPreferences.PREF_CUSTOM_JAVA_ARGS;
         if(Tools.isValidString(minecraftProfile.javaArgs)) args = minecraftProfile.javaArgs;

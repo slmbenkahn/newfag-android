@@ -17,6 +17,8 @@ public class MinecraftProfile {
 	public String gameDir;
 	public String javaDir;
 	public String javaArgs;
+	/** NewFag: oyuna (main class sonrasina) eklenen argumanlar, ornek "--quickPlayMultiplayer play.newfag.net" */
+	public String gameArgs;
 	public String logConfig;
 	public boolean logConfigIsXML;
 	public String pojavRendererName;
@@ -51,6 +53,7 @@ public class MinecraftProfile {
 		gameDir = profile.gameDir;
 		javaDir = profile.javaDir;
 		javaArgs = profile.javaArgs;
+		gameArgs = profile.gameArgs;
 		logConfig = profile.logConfig;
 		logConfigIsXML = profile.logConfigIsXML;
 		pojavRendererName = profile.pojavRendererName;
