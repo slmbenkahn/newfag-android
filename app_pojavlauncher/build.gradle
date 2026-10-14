@@ -111,7 +111,7 @@ android {
 
     defaultConfig {
         applicationId "net.newfag.android"
-        minSdkVersion 21
+        minSdkVersion 26 // NewFag: Android 8 - 15
         targetSdkVersion 34
         versionCode 10000000
         versionName getVersionName()
