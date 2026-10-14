@@ -188,9 +188,18 @@ public class NewFagPaket {
         final String secilen = anahtar;
         final boolean sec = ilkKurulum;
         activity.runOnUiThread(() -> {
-            if (sec) ExtraCore.setValue(ExtraConstants.REFRESH_VERSION_SPINNER, secilen);
             View v = activity.findViewById(R.id.mc_version_spinner);
-            if (v instanceof mcVersionSpinner) ((mcVersionSpinner) v).reloadProfiles();
+            if (v instanceof mcVersionSpinner) {
+                mcVersionSpinner s = (mcVersionSpinner) v;
+                s.reloadProfiles();
+                // reloadProfiles secimi degistirmez; ilk kurulumda NewFag profilini secili yap
+                if (sec) {
+                    int i = s.getProfileAdapter().resolveProfileIndex(secilen);
+                    if (i >= 0) s.setProfileSelection(i);
+                }
+            } else if (sec) {
+                ExtraCore.setValue(ExtraConstants.REFRESH_VERSION_SPINNER, secilen);
+            }
         });
     }
 

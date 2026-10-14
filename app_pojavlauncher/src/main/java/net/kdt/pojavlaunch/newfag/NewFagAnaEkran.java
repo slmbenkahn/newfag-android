@@ -72,6 +72,19 @@ public class NewFagAnaEkran {
         View discord = kok.findViewById(R.id.discord_button);
         if (discord != null) discord.setOnClickListener(v -> Tools.openURL(fragment.requireActivity(), DISCORD));
 
+        // arac butonlarindaki ikonlari kucult (orijinal ikonlar buyuk cizimler)
+        int boy = (int) (18 * kok.getResources().getDisplayMetrics().density);
+        for (int id : new int[]{R.id.nf_bedrock, R.id.discord_button, R.id.custom_control_button, R.id.open_files_button,
+                R.id.share_logs_button, R.id.install_jar_button, R.id.news_button}) {
+            View b = kok.findViewById(id);
+            if (!(b instanceof TextView)) continue;
+            android.graphics.drawable.Drawable[] d = ((TextView) b).getCompoundDrawablesRelative();
+            if (d[0] != null) {
+                d[0].setBounds(0, 0, boy, boy);
+                ((TextView) b).setCompoundDrawablesRelative(d[0], d[1], d[2], d[3]);
+            }
+        }
+
         View bedrock = kok.findViewById(R.id.nf_bedrock);
         if (bedrock != null) bedrock.setOnClickListener(v -> bedrockAc());
 
