@@ -41,6 +41,7 @@ public class MainMenuFragment extends Fragment {
     public static final String TAG = "MainMenuFragment";
 
     private mcVersionSpinner mVersionSpinner;
+    private net.kdt.pojavlaunch.newfag.NewFagAnaEkran mNewFag;
 
     public MainMenuFragment(){
         super(R.layout.fragment_launcher);
@@ -101,6 +102,9 @@ public class MainMenuFragment extends Fragment {
             Tools.swapFragment(requireActivity(), GamepadMapperFragment.class, GamepadMapperFragment.TAG, null);
             return true;
         });
+
+        // NewFag: isimle giris, IP, Discord, canli istatistikler
+        mNewFag = new net.kdt.pojavlaunch.newfag.NewFagAnaEkran(this, view);
     }
 
     private File getCurrentProfileDirectory() {
@@ -116,6 +120,13 @@ public class MainMenuFragment extends Fragment {
     public void onResume() {
         super.onResume();
         mVersionSpinner.reloadProfiles();
+        if (mNewFag != null) mNewFag.basla();
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        if (mNewFag != null) mNewFag.durdur();
     }
 
     private void runInstallerWithConfirmation(boolean isCustomArgs) {
