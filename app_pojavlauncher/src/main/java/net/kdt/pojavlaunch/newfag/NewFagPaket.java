@@ -194,8 +194,8 @@ public class NewFagPaket {
                 s.reloadProfiles();
                 // reloadProfiles secimi degistirmez; ilk kurulumda NewFag profilini secili yap
                 if (sec) {
-                    int i = s.getProfileAdapter().resolveProfileIndex(secilen);
-                    if (i >= 0) s.setProfileSelection(i);
+                    int konum = s.getProfileAdapter().resolveProfileIndex(secilen);
+                    if (konum >= 0) s.setProfileSelection(konum);
                 }
             } else if (sec) {
                 ExtraCore.setValue(ExtraConstants.REFRESH_VERSION_SPINNER, secilen);
