@@ -138,5 +138,7 @@
     </application>
     <queries>
         <package android:name="net.kdt.pojavlaunch.ffmpeg"/>
+        <!-- NewFag: "Bedrock ile oyna" (Minecraft Bedrock kurulu mu) -->
+        <package android:name="com.mojang.minecraftpe"/>
     </queries>
 </manifest>

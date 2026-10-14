@@ -141,6 +141,7 @@
 					android:layout_height="wrap_content"
 					android:orientation="horizontal">
 
+					<Button android:id="@+id/nf_bedrock" style="@style/NfArac" android:text="Bedrock ile oyna" android:textColor="#FF7AD9" android:drawableStart="@drawable/ic_menu_custom_controls" />
 					<Button android:id="@+id/discord_button" style="@style/NfArac" android:text="Discord" android:drawableStart="@drawable/ic_discord" />
 					<Button android:id="@+id/custom_control_button" style="@style/NfArac" android:text="@string/mcl_option_customcontrol" android:drawableStart="@drawable/ic_menu_custom_controls" />
 					<Button android:id="@+id/open_files_button" style="@style/NfArac" android:text="@string/mcl_button_open_directory" android:drawableStart="@drawable/ic_folder" />

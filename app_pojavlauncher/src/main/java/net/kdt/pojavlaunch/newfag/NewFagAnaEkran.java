@@ -4,6 +4,9 @@ import android.app.Activity;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Handler;
 import android.os.Looper;
 import android.view.View;
@@ -36,6 +39,8 @@ import java.util.Locale;
  */
 public class NewFagAnaEkran {
     public static final String SUNUCU = "play.newfag.net";
+    public static final int BEDROCK_PORT = 19132;
+    private static final String BEDROCK_PAKET = "com.mojang.minecraftpe";
     public static final String DISCORD = "https://discord.gg/newfaganarsi";
     private static final String API_DURUM = "https://newfag.net/launcher/api.php?islem=durum";
     private static final String PREF_ISIM = "newfag_isim";
@@ -67,6 +72,9 @@ public class NewFagAnaEkran {
         View discord = kok.findViewById(R.id.discord_button);
         if (discord != null) discord.setOnClickListener(v -> Tools.openURL(fragment.requireActivity(), DISCORD));
 
+        View bedrock = kok.findViewById(R.id.nf_bedrock);
+        if (bedrock != null) bedrock.setOnClickListener(v -> bedrockAc());
+
         EditText isim = kok.findViewById(R.id.nf_isim);
         Button giris = kok.findViewById(R.id.nf_giris);
         if (isim != null && giris != null) {
@@ -77,6 +85,55 @@ public class NewFagAnaEkran {
                 return false;
             });
         }
+    }
+
+    /** Bedrock (Geyser + Floodgate): Java hesabi gerekmez; oyuncu kendi Minecraft Bedrock'uyla girer. */
+    private void bedrockAc() {
+        Activity a = fragment.requireActivity();
+        boolean kurulu;
+        try {
+            a.getPackageManager().getPackageInfo(BEDROCK_PAKET, 0);
+            kurulu = true;
+        } catch (PackageManager.NameNotFoundException e) {
+            kurulu = false;
+        }
+        String adres = SUNUCU + ":" + BEDROCK_PORT;
+        if (kurulu) {
+            new AlertDialog.Builder(a)
+                    .setTitle("Bedrock ile oyna")
+                    .setMessage("Minecraft (Bedrock) açılacak ve NewFag sunucu listene eklenecek. Java hesabı gerekmez, kendi Microsoft/Xbox hesabınla girersin.\n\nAdres: " + SUNUCU + "\nPort: " + BEDROCK_PORT)
+                    .setPositiveButton("Minecraft'ı aç", (d, w) -> {
+                        try {
+                            a.startActivity(new Intent(Intent.ACTION_VIEW,
+                                    Uri.parse("minecraft://?addExternalServer=NewFag|" + adres)));
+                        } catch (Exception e) {
+                            Intent ac = a.getPackageManager().getLaunchIntentForPackage(BEDROCK_PAKET);
+                            if (ac != null) a.startActivity(ac);
+                        }
+                    })
+                    .setNeutralButton("Adresi kopyala", (d, w) -> kopyala(a, SUNUCU, "Adres kopyalandı (port " + BEDROCK_PORT + ")"))
+                    .setNegativeButton("Vazgeç", null)
+                    .show();
+        } else {
+            new AlertDialog.Builder(a)
+                    .setTitle("Minecraft Bedrock kurulu değil")
+                    .setMessage("Telefonunda Minecraft (Bedrock) varsa NewFag'e Java hesabı olmadan girebilirsin. Play Store sayfasını açalım mı?\n\nAdres: " + SUNUCU + "  Port: " + BEDROCK_PORT)
+                    .setPositiveButton("Play Store", (d, w) -> {
+                        try {
+                            a.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + BEDROCK_PAKET)));
+                        } catch (Exception e) {
+                            Tools.openURL(a, "https://play.google.com/store/apps/details?id=" + BEDROCK_PAKET);
+                        }
+                    })
+                    .setNegativeButton("Vazgeç", null)
+                    .show();
+        }
+    }
+
+    private static void kopyala(Context c, String metin, String bildirim) {
+        ClipboardManager cm = (ClipboardManager) c.getSystemService(Context.CLIPBOARD_SERVICE);
+        if (cm != null) cm.setPrimaryClip(ClipData.newPlainText("NewFag", metin));
+        Toast.makeText(c, bildirim, Toast.LENGTH_SHORT).show();
     }
 
     /** Isimle giris. Amethyst'in kurali korunur: cihazda once bir kez Microsoft hesabi (oyunun sahibi) olmali. */
